@@ -8,3 +8,7 @@ Currently supported commands:
 \-
 <
 \>
+[
+]
+
+All brainf**k functionality is implemented! I also implemented instruction bunching, so a string of +++++ evaluates to just adding 5 to the current memory tape cell, instead of adding 1 five times. 
