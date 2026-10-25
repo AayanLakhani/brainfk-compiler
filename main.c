@@ -17,12 +17,23 @@ int main(int argc, char** argv){
                 printf("%%%d = add i8 %%%d, 1\nstore i8 %%%d, i8* %%arrayidx%d\n", reg_counter, (reg_counter - 1), reg_counter, (reg_counter - 2));
                 reg_counter++;
                 break;
+
+            case '-':
+                printf("%%%d = load i32, i32* %%idx\n%%arrayidx%d = getelementptr inbounds [30000 x i8], [30000 x i8]* %%arr, i32 0, i32 %%%d\n", reg_counter, reg_counter, reg_counter);
+                reg_counter++;
+                printf("%%%d = load i8, i8* %%arrayidx%d\n", reg_counter, (reg_counter - 1));
+                reg_counter++;
+                printf("%%%d = sub i8 %%%d, 1\nstore i8 %%%d, i8* %%arrayidx%d\n", reg_counter, (reg_counter - 1), reg_counter, (reg_counter - 2));
+                reg_counter++;
+                break;
+
             case '.':
                 printf("%%%d = load i32, i32* %%idx\n%%arrayidx%d = getelementptr inbounds [30000 x i8], [30000 x i8]* %%arr, i32 0, i32 %%%d\n", reg_counter, reg_counter, reg_counter);
                 reg_counter++;
                 printf("%%%d = load i8, i8* %%arrayidx%d\n%%extended%d = zext i8 %%%d to i32\n%%result%d = call i32 @putchar(i32 %%extended%d)\n", reg_counter, (reg_counter - 1), reg_counter, reg_counter, reg_counter, reg_counter);
                 reg_counter++;
                 break;
+
         }
     }
     printf("ret i32 0\n}\n");

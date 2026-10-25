@@ -5,4 +5,4 @@ This is a compiler for the Brainf**k language. I'm making it to learn more about
 Currently supported commands:
 +
 .
-
+\-
