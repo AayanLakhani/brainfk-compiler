@@ -6,3 +6,5 @@ Currently supported commands:
 +
 .
 \-
+<
+\>
