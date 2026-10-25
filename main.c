@@ -27,6 +27,15 @@ int main(int argc, char** argv){
                 reg_counter++;
                 break;
 
+            case '>':
+                index++;
+                printf("store i32 %d, i32* %%idx\n", index);
+                break;
+            case '<':
+                index--;
+                printf("store i32 %d, i32* %%idx\n", index);
+                break;
+
             case '.':
                 printf("%%%d = load i32, i32* %%idx\n%%arrayidx%d = getelementptr inbounds [30000 x i8], [30000 x i8]* %%arr, i32 0, i32 %%%d\n", reg_counter, reg_counter, reg_counter);
                 reg_counter++;
