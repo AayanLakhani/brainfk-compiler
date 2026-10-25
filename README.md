@@ -2,6 +2,8 @@
 
 This is a compiler for the Brainf**k language. I'm making it to learn more about compilers by actually building one, even if its simple.
 
+It emits LLVM IR to stdout, which can then be run with `lli` or compiled to machine code with `clang`.
+
 Currently supported commands:
 +
 .
