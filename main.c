@@ -1,10 +1,29 @@
 #include <stdio.h>
 
+char get_opposite(char command) {
+    switch (command) {
+        case '+': return '-';
+        case '-': return '+';
+        case '>': return '<';
+        case '<': return '>';
+        default: return '\0';
+    }
+}
+
 int instruction_finder(char command) {
   int count = 1;
   int new_command = getchar();
-  while (new_command == command) {
-    count++;
+  char opp = get_opposite(command);
+  while (new_command != '\0') {
+    if(new_command == command){
+        count++;
+    }
+    else if (new_command == opp){
+        count--;
+    }
+    else {
+        break;
+    }
     new_command = getchar();
   }
   FILE *input = stdin;
